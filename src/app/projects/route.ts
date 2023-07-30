@@ -1,9 +1,15 @@
 import { NextResponse } from "next/server";
 import client from "../db/index";
 
-export async function GET(req: any, res: any) {
-  const query = "SELECT * FROM projects;";
+export async function GET(req: any) {
+  const { searchParams } = new URL(req.url);
+  const limitParam = searchParams.get("limit");
+
+  let limit = Number(limitParam) ? Number(limitParam) : null;
+
+  const query = `SELECT * FROM projects LIMIT ${limit};`;
   const result = await client.query(query);
+
   return NextResponse.json(result.rows);
 }
 

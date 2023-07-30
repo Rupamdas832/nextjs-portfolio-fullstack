@@ -6,7 +6,7 @@ const WorkExperienceSection = () => {
   return (
     <div className={styles.container}>
       <div className={styles.sectionHeading}>
-        <h3>Work Experience</h3>
+        <h3>Professional Experience</h3>
       </div>
       <div className={styles.worksContainer}>
         {works.map((work) => {

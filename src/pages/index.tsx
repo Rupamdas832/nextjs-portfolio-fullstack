@@ -1,37 +1,39 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import Footer from "../components/Footer";
-import AboutSection from "../components/indexPage/AboutSection/AboutSection";
 import HeroSection from "../components/indexPage/HeroSection/HeroSection";
 import PersonalProjectSection from "../components/indexPage/PersonalProjectSection/PersonalProjectSection";
-import ProjectHorizontalListSection from "../components/indexPage/ProjectHorizontalListSection/ProjectHorizontalListSection";
 import WorkExperienceSection from "../components/indexPage/WorkExperienceSection/WorkExperienceSection";
 import SectionDivider from "../components/SectionDivider";
 import { TSkill } from "@/types/Skill.types";
 import { ProjectCard } from "@/types/Project.types";
-import absoluteUrl from "next-absolute-url";
 import styles from "../styles/Layout.module.css";
 import Navbar from "@/components/Navbar";
+import { getProjectsURL, getSkillsURL } from "@/api/apiUrls";
+
+const fetchSkills = async (req: any) => {
+  const res = await getSkillsURL(req);
+  const data = await res.json();
+  return data;
+};
+
+const fetchProjects = async (req: any) => {
+  const res = await getProjectsURL(req, 2);
+  const data = await res.json();
+  return data;
+};
 
 export async function getServerSideProps(context: any) {
   const { req } = context;
-  const { origin } = absoluteUrl(req);
-  let skillsData = [];
-  let projectsData = [];
+
+  let results: any = [];
   try {
-    const res = await fetch(origin + "/skills");
-    skillsData = await res.json();
-  } catch (error) {
-    console.log(error);
-  }
-  try {
-    const res = await fetch(origin + "/projects");
-    projectsData = await res.json();
+    results = await Promise.all([fetchSkills(req), fetchProjects(req)]);
   } catch (error) {
     console.log(error);
   }
   return {
-    props: { skills: skillsData, projects: projectsData },
+    props: { skills: results[0], projects: results[1] },
   };
 }
 
@@ -52,10 +54,12 @@ export default function Home({ skills, projects }: HomeProps) {
       <main className={styles.main}>
         <Navbar />
         <HeroSection skills={skills} />
-        <ProjectHorizontalListSection projects={projects} />
         <WorkExperienceSection />
         <SectionDivider />
-        <PersonalProjectSection projects={projects} />
+        <PersonalProjectSection
+          projects={projects}
+          heading="Personal Projects"
+        />
         <Footer />
       </main>
     </>
