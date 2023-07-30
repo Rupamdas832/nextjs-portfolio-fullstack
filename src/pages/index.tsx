@@ -1,3 +1,4 @@
+import "../styles/globals.css";
 import Head from "next/head";
 import Footer from "../components/Footer";
 import AboutSection from "../components/indexPage/AboutSection/AboutSection";
@@ -9,6 +10,8 @@ import SectionDivider from "../components/SectionDivider";
 import { TSkill } from "@/types/Skill.types";
 import { ProjectCard } from "@/types/Project.types";
 import absoluteUrl from "next-absolute-url";
+import styles from "../styles/Layout.module.css";
+import Navbar from "@/components/Navbar";
 
 export async function getServerSideProps(context: any) {
   const { req } = context;
@@ -41,19 +44,20 @@ export default function Home({ skills, projects }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Rupam Portfolio</title>
+        <title>Rupam Das</title>
         <meta name="description" content="Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <main className={styles.main}>
+        <Navbar />
         <HeroSection skills={skills} />
         <ProjectHorizontalListSection projects={projects} />
         <WorkExperienceSection />
         <SectionDivider />
         <PersonalProjectSection projects={projects} />
         <Footer />
-      </div>
+      </main>
     </>
   );
 }

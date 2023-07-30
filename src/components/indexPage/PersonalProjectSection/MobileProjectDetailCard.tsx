@@ -1,14 +1,17 @@
 import { ProjectCardProps } from "../../../types/Project.types";
 import styles from "./Style.module.css";
 import buttonStyles from "../../../styles/button.module.css";
+import Link from "next/link";
 
 const MobileProjectDetailCard = ({ project, index }: ProjectCardProps) => {
   return (
     <div className={styles.projectDetailCardContainer}>
       <div className={styles.cardLeftSection}>
-        <div className={styles.cardTitle}>
-          <h3>{project.title}</h3>
-        </div>
+        <Link href={`/project/${project.project_id}`}>
+          <div className={styles.cardTitle}>
+            <h3>{project.title}</h3>
+          </div>
+        </Link>
         <div className={styles.cardDuration}>
           <h6>{project.duration}</h6>
         </div>

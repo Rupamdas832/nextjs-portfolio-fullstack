@@ -4,6 +4,7 @@
   align-items: center;
   padding: 3rem 2rem 5rem 2rem;
   background-color: var(--mainHeroColor);
+  color: var(--mainBlackColor);
 }
 
 .sectionHeading {
@@ -41,6 +42,7 @@
 
 .cardTitle {
   margin: 10px 0;
+  color: var(--mainColor);
 }
 
 .cardHeadingSubtext {
