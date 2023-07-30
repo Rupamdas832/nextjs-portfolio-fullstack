@@ -1,0 +1,36 @@
+.contactPopupOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.807);
+  z-index: 5;
+}
+
+.contactPopupModal {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 1.5rem 2rem;
+  background-color: var(--mainLightColor);
+  color: var(--mainColor);
+  border-radius: 1rem;
+}
+
+.contactPopupBody {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.contactPopupElement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  color: var(--mainBlackColor);
+}

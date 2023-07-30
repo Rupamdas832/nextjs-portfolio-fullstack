@@ -1,0 +1,18 @@
+.filledButton {
+  min-width: 80px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  cursor: pointer;
+}
+.ghostButton {
+  min-width: 80px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  border: 1px solid var(--mainColor);
+  color: var(--mainDarkColor);
+  background: none;
+  cursor: pointer;
+}

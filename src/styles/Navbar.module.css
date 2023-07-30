@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: var(--mainDarkColor);
+  color: var(--mainLightColor);
+}
+
+.navElementsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.navElements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 1.2rem;
+}

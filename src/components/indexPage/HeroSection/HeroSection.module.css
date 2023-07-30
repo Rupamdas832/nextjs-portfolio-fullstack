@@ -1,0 +1,201 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  height: 50rem;
+  background-color: var(--mainDarkColor);
+  position: relative;
+}
+
+.bodyContainer {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.subHeading {
+  color: var(--mainGreyColor);
+  font-size: 0.8rem;
+}
+
+.heading {
+  font-size: 2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: 1rem;
+  color: var(--mainLightColor);
+}
+
+.title {
+  color: var(--mainLightColor);
+}
+
+.desc {
+  color: var(--mainGreyColor);
+  margin-top: 1rem;
+}
+
+.buttonContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.profileImageContainer {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  top: 7rem;
+  left: 43%;
+}
+
+.profileImageContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.floatingCard {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px;
+  border-radius: 15px;
+  background-color: var(--mainBlackColor);
+  color: var(--mainLightColor);
+  box-shadow: -2px -2px 5px var(--mainBoxShadow);
+  position: absolute;
+}
+
+.floatingCard.card1 {
+  height: 325px;
+  bottom: 3rem;
+  left: 15%;
+}
+
+.skillListContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--mainGreyColor);
+}
+
+.floatingCard.card2 {
+  width: 400px;
+  height: 150px;
+  bottom: 5rem;
+  left: 37%;
+}
+
+.educationContainer {
+  margin-top: 1rem;
+  color: var(--mainGreyColor);
+}
+
+.educationContainer p {
+  margin-bottom: 1rem;
+}
+
+.floatingCard.card3 {
+  height: 250px;
+  width: 300px;
+  bottom: 4rem;
+  left: 70%;
+}
+
+.blogContainer {
+  margin-top: 1rem;
+  color: var(--mainGreyColor);
+  padding: 0 12px;
+}
+
+.blogContainer li {
+  margin-bottom: 1rem;
+}
+
+.floatingCard.card4 {
+  top: 10%;
+  left: 75%;
+}
+
+.socialItem {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--mainGreyColor);
+  cursor: pointer;
+}
+
+.socialItem p {
+  margin-left: 10px;
+}
+
+.leftBadge {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  border-radius: 0 25px 25px 0;
+  font-size: 1.2rem;
+  background-color: var(--mainBlackColor);
+  color: var(--mainLightColor);
+  box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.701);
+  z-index: 3;
+}
+
+.circleBadge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 1rem;
+  background-color: rgb(62, 255, 19);
+  position: absolute;
+  right: 1rem;
+}
+
+.marqueeContainer {
+  width: 40%;
+  line-height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 7rem;
+  padding: 10px;
+  /* box-shadow: inset 0 0 10px #81008156; */
+  border-radius: 4px;
+}
+
+.marqueeText {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marqueeElement {
+  margin: 0 25px;
+  font-size: 3rem;
+}

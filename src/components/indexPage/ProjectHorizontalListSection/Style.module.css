@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 0;
+  background-color: var(--mainLightColor);
+}
+
+.projectCardContainer {
+  display: flex;
+  flex-direction: column;
+}
+.projectCard {
+  display: flex;
+  border-radius: 10px;
+  width: 210px;
+  height: 300px;
+  box-shadow: 3px 3px 10px var(--mainBoxShadow);
+}
+
+.projectCardImage {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.projectCardName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}

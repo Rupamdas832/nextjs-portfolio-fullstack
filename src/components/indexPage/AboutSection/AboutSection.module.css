@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
+  background-color: var(--mainLightColor);
+  font-family: sans-serif;
+}
+
+.leftSection {
+  display: flex;
+  width: 600px;
+  margin-right: 2rem;
+  padding-right: 2rem;
+  font-size: 1.5rem;
+  border-right: 1px solid var(--mainBlackColor);
+}
+.rightSection {
+  display: flex;
+  width: 300px;
+  font-size: 1rem;
+}
