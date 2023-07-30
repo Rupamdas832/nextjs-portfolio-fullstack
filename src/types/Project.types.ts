@@ -14,3 +14,10 @@ export type ProjectCardProps = {
   project: ProjectCard;
   index: number;
 };
+
+export type TComment = {
+  comment_id?: number;
+  project_id: number;
+  name: string;
+  text: string;
+};
