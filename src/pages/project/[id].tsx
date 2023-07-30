@@ -2,6 +2,7 @@ import "../../styles/globals.css";
 import Navbar from "@/components/Navbar";
 import { ProjectCard } from "@/types/Project.types";
 import absoluteUrl from "next-absolute-url";
+import styles from "./singleProject.module.css";
 
 export async function getServerSideProps(context: any) {
   const { query, req } = context;
@@ -34,18 +35,22 @@ const ProjectDetailsPage = ({ project }: ProjectDetailsPageProps) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           marginTop: "4rem",
         }}
       >
-        <div style={{ width: "50%", height: "400px" }}>
-          <img src={project.landscape_image} width="100%" height="100%" />
+        <div className={styles.projectPageHeroBanner}>
+          <h1>PROJECT #{project.project_id}</h1>
         </div>
-        <div style={{ marginTop: "2rem" }}>
-          <h1>{project.title}</h1>
-        </div>
-        <div style={{ marginTop: "2rem" }}>
-          <h4>{project.description}</h4>
+        <div className={styles.projectPageDetailsContainer}>
+          <div style={{ width: "50%", height: "400px" }}>
+            <img src={project.landscape_image} width="100%" height="100%" />
+          </div>
+          <div style={{ marginTop: "2rem" }}>
+            <h1>{project.title}</h1>
+          </div>
+          <div style={{ marginTop: "2rem" }}>
+            <h4>{project.description}</h4>
+          </div>
         </div>
       </div>
     </div>

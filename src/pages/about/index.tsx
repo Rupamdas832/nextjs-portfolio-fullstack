@@ -1,29 +1,6 @@
 import "../../styles/globals.css";
 import Navbar from "@/components/Navbar";
-import absoluteUrl from "next-absolute-url";
-
-// export async function getServerSideProps(context: any) {
-//   const { query, req } = context;
-//   const { id } = query;
-//   const { origin } = absoluteUrl(req);
-
-//   let project = null;
-
-//   try {
-//     const res = await fetch(origin + `/projects/${id}`);
-//     project = await res.json();
-//   } catch (error) {
-//     console.log(error);
-//   }
-
-//   return {
-//     props: { project },
-//   };
-// }
-
-// interface ProjectDetailsPageProps {
-//   project: ProjectCard;
-// }
+import styles from "./about.module.css";
 
 const AboutPage = () => {
   return (
@@ -33,11 +10,99 @@ const AboutPage = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           marginTop: "4rem",
         }}
       >
-        <h1>About</h1>
+        <div className={styles.aboutPageHeroBanner}>
+          <h1>ABOUT</h1>
+        </div>
+        <div className={styles.aboutPageDetailsSection}>
+          <h3>Meet the Coding Chemist</h3>
+          <div className={styles.aboutPageDetails}>
+            <div className={styles.aboutPageDetailsLeft}>
+              <div className={styles.aboutPageDetailElement}>
+                <h4>Diverse Background</h4>
+                <p>
+                  From checmical enginerring to coding extrardinate, who says
+                  transformations are just for checmicals?
+                </p>
+              </div>
+              <div className={styles.aboutPageDetailElement}>
+                <h4>Self-taught Engineer</h4>
+                <p>
+                  No need of an expensive degree when you have the determination
+                  to teach yourself.
+                </p>
+              </div>
+              <div className={styles.aboutPageDetailElement}>
+                <h4>Experienced Developer</h4>
+                <p>
+                  Two years mastering React, JavaScript, and Node, creating
+                  nothing but digital awesomeness.
+                </p>
+              </div>
+            </div>
+            <div className={styles.aboutPageDetailsRight}>
+              <img
+                src="https://i.ibb.co/khZnqQg/IMG-20230610-WA0077.jpg"
+                alt="image"
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.aboutPageTransitionSection}>
+          <h3>The Transition</h3>
+          <div className={styles.aboutPageTransitionDetails}>
+            <p className={styles.aboutPageTransitionDetailsLeft}>
+              With a passion for problem-solving, embracing the world of IT was
+              an irresistable challenge waiting to be conquered.
+            </p>
+            <p className={styles.aboutPageTransitionDetailsRight}>
+              A strong foundation in checmical engineering provided the
+              analytical mindset needed to excel in web development.
+            </p>
+          </div>
+        </div>
+        <div className={styles.aboutPageDetailsQuoteSection}>
+          <div className={styles.aboutPageDetailsQuote}>
+            <h2>
+              "If plan 'A' didn't work, the alphabet has 25 more letters! Stay
+              cool."
+            </h2>
+          </div>
+        </div>
+        <div className={styles.aboutPageSocialSection}>
+          <div className={styles.aboutPageSocialLinks}>
+            <a
+              href="https://www.linkedin.com/in/rupam-das-82362a105/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://img.icons8.com/color/512/linkedin-circled.png"
+                width="20px"
+                height="20px"
+              />
+            </a>
+            <img
+              src="https://img.icons8.com/fluency/512/instagram-new.png"
+              width="20px"
+              height="20px"
+            />
+            <a
+              href="https://twitter.com/RupamDas832"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://img.icons8.com/color/512/twitter.png"
+                width="20px"
+                height="20px"
+              />
+            </a>
+          </div>
+          <p>All rights reserved</p>
+        </div>
       </div>
     </div>
   );

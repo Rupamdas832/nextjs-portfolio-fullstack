@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import PersonalProjectSection from "@/components/indexPage/PersonalProjectSection/PersonalProjectSection";
 import { ProjectCard } from "@/types/Project.types";
 import absoluteUrl from "next-absolute-url";
+import styles from "./works.module.css";
 
 export async function getServerSideProps(context: any) {
   const { req } = context;
@@ -34,11 +35,13 @@ const WorkListPage = ({ projects }: WorkListPageProps) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           marginTop: "4rem",
         }}
       >
-        <PersonalProjectSection projects={projects} heading="Personal Works" />
+        <div className={styles.worksPageHeroBanner}>
+          <h1>PROJECTS</h1>
+        </div>
+        <PersonalProjectSection projects={projects} heading="" />
       </div>
     </div>
   );
