@@ -5,6 +5,7 @@ import { ProjectCard, TComment } from "@/types/Project.types";
 import absoluteUrl from "next-absolute-url";
 import styles from "./singleProject.module.css";
 import buttonStyles from "@/styles/button.module.css";
+import HeroBanner from "@/components/HeroBanner";
 
 export async function getServerSideProps(context: any) {
   const { query, req } = context;
@@ -90,13 +91,24 @@ const ProjectDetailsPage = ({
           marginTop: "4rem",
         }}
       >
-        <div className={styles.projectPageHeroBanner}>
-          <h1>PROJECT #{project.project_id}</h1>
-        </div>
+        <HeroBanner title={`PROJECT #${project.project_id}`} />
         <div className={styles.projectPageDetailsContainer}>
           <div className={styles.laptopCard}>
             <img
               src={project.landscape_image}
+              alt={project.title}
+              className={styles.cardImage}
+            />
+          </div>
+          <div className={styles.mobileCard}>
+            <div className={styles.mobileHeader}>
+              <div className={styles.mobileNotch}>
+                <div className={styles.mobileSpeaker}></div>
+                <div className={styles.mobileFrontCamera}></div>
+              </div>
+            </div>
+            <img
+              src={project.image}
               alt={project.title}
               className={styles.cardImage}
             />
@@ -129,14 +141,14 @@ const ProjectDetailsPage = ({
               </button>
             </div>
             <div className={styles.projectPageCommentsContainer}>
-              {comments.map((comment) => {
+              {comments.reverse().map((comment) => {
                 return (
                   <div
                     key={comment.comment_id}
                     className={styles.projectPageCommentElement}
                   >
                     <div className={styles.projectPageCommentProfileImage}>
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBEcmVfhvFlT_l3XLChINntlftzppyniOWow&usqp=CAU" />
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr_IULLOXJT80cLu-eRqkRGrHY23yLEx4p0w&usqp=CAU" />
                     </div>
                     <div>
                       <h4 className={styles.projectPageCommentProfileName}>

@@ -1,22 +1,10 @@
-.projectPageHeroBanner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 250px;
-  background-color: var(--mainColor);
-}
-
-.projectPageHeroBanner h1 {
-  font-size: 6rem;
-}
-
 .projectPageDetailsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
+  padding: 2rem;
 }
 
 .laptopCard {
@@ -33,9 +21,15 @@
   width: 100%;
 }
 
+.mobileCard {
+  display: none;
+}
+
 .projectPageCommentsSection {
   width: 70%;
   margin-top: 3rem;
+  border-top: 1px solid var(--mainGreyColor);
+  padding-top: 2rem;
 }
 
 .projectPageCommentsSectionTitle {
@@ -77,6 +71,7 @@
 
 .projectPageCommentProfileImage {
   width: 30px;
+  min-width: 30px;
   height: 30px;
   margin-right: 1rem;
 }
@@ -91,4 +86,69 @@
   color: var(--mainGreyColor);
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .projectPageDetailsContainer {
+    padding: 1rem;
+  }
+  .laptopCard {
+    display: none;
+  }
+  .mobileCard {
+    display: block;
+    width: 200px;
+    height: 350px;
+    border-radius: 20px;
+    border: 5px solid black;
+    position: relative;
+    overflow: scroll;
+    z-index: 1;
+    box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.903);
+  }
+
+  .mobileCard::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobileHeader {
+    display: flex;
+    height: 15px;
+    background-color: var(--mainBlackColor);
+    position: sticky;
+    top: 0;
+  }
+
+  .mobileNotch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 15px;
+    position: sticky;
+    top: 0;
+    left: 20%;
+    border-radius: 0 0 15px 15px;
+    background-color: black;
+    z-index: 2;
+  }
+
+  .mobileSpeaker {
+    width: 40px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: rgb(31, 31, 31);
+    margin-right: 8px;
+  }
+
+  .mobileFrontCamera {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(31, 31, 31);
+  }
+
+  .projectPageCommentsSection {
+    width: 100%;
+  }
 }

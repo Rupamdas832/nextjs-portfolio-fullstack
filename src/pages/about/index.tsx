@@ -1,6 +1,7 @@
 import "../../styles/globals.css";
 import Navbar from "@/components/Navbar";
 import styles from "./about.module.css";
+import HeroBanner from "@/components/HeroBanner";
 
 const AboutPage = () => {
   return (
@@ -13,9 +14,7 @@ const AboutPage = () => {
           marginTop: "4rem",
         }}
       >
-        <div className={styles.aboutPageHeroBanner}>
-          <h1>ABOUT</h1>
-        </div>
+        <HeroBanner title="ABOUT" />
         <div className={styles.aboutPageDetailsSection}>
           <h3>Meet the Coding Chemist</h3>
           <div className={styles.aboutPageDetails}>

@@ -1,5 +1,5 @@
 .contactPopupOverlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -33,4 +33,13 @@
   justify-content: space-between;
   padding: 4px;
   color: var(--mainBlackColor);
+}
+
+@media only screen and (max-width: 450px) {
+  .contactPopupModal {
+    width: 300px;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+  }
 }

@@ -4,6 +4,7 @@ import PersonalProjectSection from "@/components/indexPage/PersonalProjectSectio
 import { ProjectCard } from "@/types/Project.types";
 import absoluteUrl from "next-absolute-url";
 import styles from "./works.module.css";
+import HeroBanner from "@/components/HeroBanner";
 
 export async function getServerSideProps(context: any) {
   const { req } = context;
@@ -38,9 +39,7 @@ const WorkListPage = ({ projects }: WorkListPageProps) => {
           marginTop: "4rem",
         }}
       >
-        <div className={styles.worksPageHeroBanner}>
-          <h1>PROJECTS</h1>
-        </div>
+        <HeroBanner title="PROJECTS" />
         <PersonalProjectSection projects={projects} heading="" />
       </div>
     </div>

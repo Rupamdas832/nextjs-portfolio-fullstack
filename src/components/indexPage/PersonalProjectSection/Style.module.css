@@ -19,14 +19,9 @@
 
 .projectDetailCardContainer {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.projectDetailCardContainer {
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 7rem;
 }
 
@@ -67,6 +62,7 @@
 .cardRightSection {
   display: flex;
   align-items: flex-end;
+  justify-content: center;
   position: relative;
 }
 
@@ -147,4 +143,29 @@
 }
 .laptopCard::-webkit-scrollbar {
   display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .projectDetailCardContainer {
+    padding: 1rem 0;
+  }
+  .laptopCard {
+    display: none;
+  }
+  .mobileCard {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .sectionHeading {
+    font-size: 1.5rem;
+  }
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+  .cardLeftSection {
+    width: 300px;
+    padding: 14px 0;
+  }
 }

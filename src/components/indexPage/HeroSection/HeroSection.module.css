@@ -199,3 +199,48 @@
   margin: 0 25px;
   font-size: 3rem;
 }
+
+@media only screen and (max-width: 750px) {
+  .bodyContainer {
+    margin-left: 0;
+  }
+  .profileImageContainer {
+    width: 250px;
+    height: 250px;
+    left: 60%;
+  }
+  .floatingCard.card1 {
+    left: 10%;
+  }
+  .floatingCard.card2 {
+    display: none;
+  }
+  .floatingCard.card4 {
+    display: none;
+  }
+  .floatingCard.card3 {
+    bottom: 4rem;
+    left: 53%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    height: 37rem;
+    padding: 2rem 1rem;
+  }
+  .bodyContainer {
+    width: 350px;
+    margin-top: 2rem;
+  }
+  .profileImageContainer {
+    display: none;
+  }
+  .floatingCard.card1 {
+    display: none;
+  }
+  .floatingCard.card3 {
+    bottom: 1rem;
+    left: 5%;
+  }
+}

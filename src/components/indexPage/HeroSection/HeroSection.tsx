@@ -24,7 +24,7 @@ const HeroSection = ({ skills }: HeroSectionProps) => {
         <h1 className={styles.heading}> Rupam Das</h1>
         <h2 className={styles.title}>Frontend Developer</h2>
         <p className={styles.desc}>
-          1.5+ years of experience in React Development. Sound understanding of
+          2+ years of experience in React Development. Sound understanding of
           technologies such as React, Javascript, Typescript, Node, Redux, CSS,
           Socket, and deployment
         </p>

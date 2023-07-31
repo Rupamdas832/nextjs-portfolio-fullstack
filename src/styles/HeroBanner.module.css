@@ -1,0 +1,21 @@
+.heroBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 250px;
+  background-color: var(--mainColor);
+}
+
+.heroBanner h1 {
+  font-size: 6rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .heroBanner {
+    height: 150px;
+  }
+  .heroBanner h1 {
+    font-size: 3rem;
+  }
+}
