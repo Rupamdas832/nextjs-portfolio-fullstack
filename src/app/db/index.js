@@ -1,11 +1,11 @@
 var Pool = require("pg").Pool;
 
 const client = new Pool({
-  user: "muqoarur",
-  host: "john.db.elephantsql.com",
-  database: "muqoarur",
-  password: "ygeTMLRWLvnJJUXEeKa9iUNKrrEbtv7T",
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT,
 });
 
 export default client;

@@ -2,28 +2,27 @@ import { useState } from "react";
 import "../../styles/globals.css";
 import Navbar from "@/components/Navbar";
 import { ProjectCard, TComment } from "@/types/Project.types";
-import absoluteUrl from "next-absolute-url";
 import styles from "./singleProject.module.css";
 import buttonStyles from "@/styles/button.module.css";
 import HeroBanner from "@/components/HeroBanner";
+import { originUrl } from "@/api/apiUrls";
 
 export async function getServerSideProps(context: any) {
   const { query, req } = context;
   const { id } = query;
-  const { origin } = absoluteUrl(req);
 
   let project = null;
   let comments = [];
 
   try {
-    const res = await fetch(origin + `/projects/${id}`);
+    const res = await fetch(originUrl + `/projects/${id}`);
     project = await res.json();
   } catch (error) {
     console.log(error);
   }
 
   try {
-    const res = await fetch(origin + `/projects/${id}/comments`);
+    const res = await fetch(originUrl + `/projects/${id}/comments`);
     comments = await res.json();
   } catch (error) {
     console.log(error);

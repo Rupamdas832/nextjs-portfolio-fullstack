@@ -2,18 +2,17 @@ import "../../styles/globals.css";
 import Navbar from "@/components/Navbar";
 import PersonalProjectSection from "@/components/indexPage/PersonalProjectSection/PersonalProjectSection";
 import { ProjectCard } from "@/types/Project.types";
-import absoluteUrl from "next-absolute-url";
 import styles from "./works.module.css";
 import HeroBanner from "@/components/HeroBanner";
+import { originUrl } from "@/api/apiUrls";
 
 export async function getServerSideProps(context: any) {
   const { req } = context;
-  const { origin } = absoluteUrl(req);
 
   let projects = [];
 
   try {
-    const res = await fetch(origin + `/projects`);
+    const res = await fetch(originUrl + `/projects`);
     projects = await res.json();
   } catch (error) {
     console.log(error);

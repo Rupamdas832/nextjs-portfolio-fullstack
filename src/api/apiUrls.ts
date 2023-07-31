@@ -1,14 +1,9 @@
-import absoluteUrl from "next-absolute-url";
-
-function getOrigin(req: any) {
-  const { origin } = absoluteUrl(req);
-  return origin;
-}
+export const originUrl = process.env.SERVER;
 
 export const getSkillsURL = (req: any) => {
-  return fetch(getOrigin(req) + "/skills");
+  return fetch(originUrl + "/skills");
 };
 
 export const getProjectsURL = (req: any, limit: number) => {
-  return fetch(getOrigin(req) + `/projects/?limit=${limit}`);
+  return fetch(originUrl + `/projects/?limit=${limit}`);
 };
