@@ -49,7 +49,10 @@ export default function Home({ skills, projects }: HomeProps) {
         <title>Rupam Das</title>
         <meta name="description" content="Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href="https://i.ibb.co/kxnN7tV/rupam-das-high-resolution-logo-color-on-transparent-background.webp"
+        />
       </Head>
       <main className={styles.main}>
         <Navbar />
