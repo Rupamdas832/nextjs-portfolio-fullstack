@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "../../styles/globals.css";
-import Navbar from "@/components/Navbar";
 import { ProjectCard, TComment } from "@/types/Project.types";
 import styles from "./singleProject.module.css";
 import buttonStyles from "@/styles/button.module.css";
 import HeroBanner from "@/components/HeroBanner";
 import { originUrl } from "@/api/apiUrls";
+import Layout from "@/components/Layout";
 
 export async function getServerSideProps(context: any) {
   const { query, req } = context;
@@ -81,8 +81,7 @@ const ProjectDetailsPage = ({
   };
 
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <div
         style={{
           display: "flex",
@@ -162,7 +161,7 @@ const ProjectDetailsPage = ({
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

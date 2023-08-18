@@ -8,8 +8,8 @@ import SectionDivider from "../components/SectionDivider";
 import { TSkill } from "@/types/Skill.types";
 import { ProjectCard } from "@/types/Project.types";
 import styles from "../styles/Layout.module.css";
-import Navbar from "@/components/Navbar";
 import { getProjectsURL, getSkillsURL } from "@/api/apiUrls";
+import Layout from "@/components/Layout";
 
 const fetchSkills = async (req: any) => {
   const res = await getSkillsURL(req);
@@ -54,8 +54,7 @@ export default function Home({ skills, projects }: HomeProps) {
           href="https://i.ibb.co/kxnN7tV/rupam-das-high-resolution-logo-color-on-transparent-background.webp"
         />
       </Head>
-      <main className={styles.main}>
-        <Navbar />
+      <Layout>
         <HeroSection skills={skills} />
         <WorkExperienceSection />
         <SectionDivider />
@@ -64,7 +63,7 @@ export default function Home({ skills, projects }: HomeProps) {
           heading="Personal Projects"
         />
         <Footer />
-      </main>
+      </Layout>
     </>
   );
 }

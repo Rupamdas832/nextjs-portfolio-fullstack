@@ -1,12 +1,11 @@
 import "../../styles/globals.css";
-import Navbar from "@/components/Navbar";
 import styles from "./about.module.css";
 import HeroBanner from "@/components/HeroBanner";
+import Layout from "@/components/Layout";
 
 const AboutPage = () => {
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <div
         style={{
           display: "flex",
@@ -103,7 +102,7 @@ const AboutPage = () => {
           <p>All rights reserved</p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

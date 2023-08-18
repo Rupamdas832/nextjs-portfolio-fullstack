@@ -1,10 +1,10 @@
 import "../../styles/globals.css";
-import Navbar from "@/components/Navbar";
 import PersonalProjectSection from "@/components/indexPage/PersonalProjectSection/PersonalProjectSection";
 import { ProjectCard } from "@/types/Project.types";
 import styles from "./works.module.css";
 import HeroBanner from "@/components/HeroBanner";
 import { originUrl } from "@/api/apiUrls";
+import Layout from "@/components/Layout";
 
 export async function getServerSideProps(context: any) {
   const { req } = context;
@@ -29,8 +29,7 @@ interface WorkListPageProps {
 
 const WorkListPage = ({ projects }: WorkListPageProps) => {
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <div
         style={{
           display: "flex",
@@ -41,7 +40,7 @@ const WorkListPage = ({ projects }: WorkListPageProps) => {
         <HeroBanner title="PROJECTS" />
         <PersonalProjectSection projects={projects} heading="" />
       </div>
-    </div>
+    </Layout>
   );
 };
 
